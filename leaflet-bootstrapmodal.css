@@ -1,0 +1,15 @@
+.leaflet-control-bootstrapmodal {
+}
+
+.leaflet-control-bootstrapmodal i {
+    font-size: 16px;
+    color: #444;
+
+    line-height: 26px;
+}
+
+.leaflet-touch .leaflet-control-bootstrapmodal i {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+}

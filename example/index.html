@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>L.Control.BootstrapModal</title>
+
+    <!--
+    Presumably you use Leaflet and Bootstrap...
+    or else you wouldn't be wanting a control to open BS modals from Leaflet  ;)
+    -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet-src.js"></script>
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" />
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!--
+    this control: JS and CSS files
+    -->
+    <link rel="stylesheet" type="text/css" href="../leaflet-bootstrapmodal.css" />
+    <script type="text/javascript" src="../leaflet-bootstrapmodal.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+#map {
+    width:4in;
+    height:4in;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function () {
+    // the basic map, no frills
+    var MAP = L.map('map');
+    MAP.setView([51.50,0.127],10);
+    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright/">OpenStreetMap contributors</a>'
+	}).addTo(MAP);
+    
+    // add a few BS Modal controls
+    // see also http://getbootstrap.com/components/#glyphicons
+    new L.Control.BootstrapModal({
+        modalId: 'modal_help',
+        tooltip: "How to use this thing",
+        glyph: 'question-sign'
+    }).addTo(MAP);
+    new L.Control.BootstrapModal({
+        modalId: 'modal_about',
+        tooltip: "What is it?",
+        glyph: 'info-sign'
+    }).addTo(MAP);
+});
+</script>
+
+
+
+<!-- a plain ol' map -->
+<div id="map"></div>
+
+
+
+<!-- a Bootstrap modal, which we'll bind to the control via the modalId parameter -->
+<div class="modal" role="dialog" id="modal_about">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">About This Plugin</h4>
+            </div>
+            <div class="modal-body">
+
+                <p>This control simply opens a Bootstrap modal. This is great for placing Help links, for making legends that don't consume screen space, or even contact and feedback forms.</p>
+                <p>For more information, see <a href="https://github.com/gregallensworth/L.Control.BootstrapModal" target="_blank">check out the repo</a>.</p>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+<!-- a Bootstrap modal, which we'll bind to the control via the modalId parameter -->
+<div class="modal" role="dialog" id="modal_help">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Help</h4>
+            </div>
+            <div class="modal-body">
+
+                <p>For information on using this control plugin, see <a href="https://github.com/gregallensworth/L.Control.BootstrapModal" target="_blank">the project on Github</a>.</p>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+
+</body>
+</html>
+
