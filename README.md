@@ -6,6 +6,8 @@ Modals are great for help panels, or for feedback forms, or for displaying a leg
 
 # Usage
 
+For a quick start, see the *example* folder, or the live demo: http://gregallensworth.github.io/L.Control.BootstrapModal/
+
 Assuming that you already have a Bootstrap modal set up on your page, and already have a Leaflet map running, the control runs like this:
 
 ```
